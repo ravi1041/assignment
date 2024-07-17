@@ -14,7 +14,8 @@ public class ApplicationHealthScheduler {
 	@Autowired
 	private ApplicationHealthService applicationHealthService;
 
-	@Scheduled(fixedRate = 60000)
+	//It call for every 5 minutes
+	@Scheduled(fixedRate = 300000)
 	public void captureSystemHealth() {
 		applicationHealthService.captureAndSaveSystemHealth();
 	}
