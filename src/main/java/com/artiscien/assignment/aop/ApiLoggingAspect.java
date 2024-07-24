@@ -16,14 +16,14 @@ public class ApiLoggingAspect {
 
 	@Around("execution(* com.artiscien.assignment.controller..*(..))")
 	public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
-		logger.info("Method {} is called with arguments: {}", joinPoint.getSignature().getName(),
-				Arrays.toString(joinPoint.getArgs()));
+		//logger.info("Method {} is called with arguments: {}", joinPoint.getSignature().getName(),
+				//Arrays.toString(joinPoint.getArgs()));
 		Object result;
 		try {
 			result = joinPoint.proceed();
 		} catch (Throwable throwable) {
-			logger.error("Exception in method {}: {}", joinPoint.getSignature().getName(), throwable.getMessage(),
-					throwable);
+			//logger.error("Exception in method {}: {}", joinPoint.getSignature().getName(), throwable.getMessage(),
+					//throwable);
 			throw throwable;
 		}
 		logger.info("Method {} returns: {}", joinPoint.getSignature().getName(), result);
